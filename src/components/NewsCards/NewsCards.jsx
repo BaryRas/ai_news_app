@@ -24,7 +24,7 @@ const infoCards = [
   },
 ];
 
-const NewsCards = ({ articles }) => {
+const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
   console.log(articles);
 
@@ -81,7 +81,7 @@ const NewsCards = ({ articles }) => {
       >
         {articles.map((article, i) => (
           <Grid item key={i} xs={12} sm={6} lg={3} style={{ display: "flex" }}>
-            <NewsCard article={article} i={i} />
+            <NewsCard article={article} i={i} activeArticle={activeArticle} />
           </Grid>
         ))}
         {/* {articles.map((article, i) => (
