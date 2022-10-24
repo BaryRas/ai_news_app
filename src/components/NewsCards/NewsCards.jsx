@@ -24,71 +24,68 @@ const infoCards = [
   },
 ];
 
-const NewsCards = ({ articles, activeArticle }) => {
-  const classes = useStyles();
-  console.log(articles);
-
-  if (!articles.length) {
-    return (
-      <Grow in>
-        <Grid
-          className={classes.container}
-          container
-          alignItems="stretch"
-          spacing={3}
-        >
-          {infoCards.map((infoCard, i) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
-              className={classes.infoCard}
-              key={i}
-            >
-              <div
-                className={classes.card}
-                style={{ backgroundColor: infoCard.color }}
-              >
-                <Typography variant="h5" component="h5">
-                  {infoCard.title}
-                </Typography>
-                {infoCard.info ? (
-                  <Typography variant="h6" component="h6">
-                    <strong>{infoCard.title.split(" ")[2]}</strong>: <br />
-                    {infoCard.info}
-                  </Typography>
-                ) : null}
-                <Typography variant="h6" component="h6">
-                  Try saying: <br /> <i>{infoCard.text}</i>
-                </Typography>
-              </div>
-            </Grid>
-          ))}
-        </Grid>
-      </Grow>
-    );
-  }
-
+const GridLayout = (props) => {
   return (
     <Grow in>
       <Grid
-        className={classes.container}
+        className={props.container}
         container
         alignItems="stretch"
         spacing={3}
       >
-        {articles.map((article, i) => (
-          <Grid item key={i} xs={12} sm={6} lg={3} style={{ display: "flex" }}>
-            <NewsCard article={article} i={i} activeArticle={activeArticle} />
-          </Grid>
-        ))}
-        {/* {articles.map((article, i) => (
-          <p>{article.title}</p>
-        ))} */}
+        {props.children}
       </Grid>
     </Grow>
+  );
+};
+
+const NewsCards = ({ articles, activeArticle }) => {
+  const classes = useStyles();
+
+  if (!articles.length) {
+    return (
+      <GridLayout container={classes.container}>
+        {infoCards.map((infoCard, i) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            className={classes.infoCard}
+            key={i}
+          >
+            <div
+              className={classes.card}
+              style={{ backgroundColor: infoCard.color }}
+            >
+              <Typography variant="h5" component="h5">
+                {infoCard.title}
+              </Typography>
+              {infoCard.info ? (
+                <Typography variant="h6" component="h6">
+                  <strong>{infoCard.title.split(" ")[2]}</strong>: <br />
+                  {infoCard.info}
+                </Typography>
+              ) : null}
+              <Typography variant="h6" component="h6">
+                Try saying: <br /> <i>{infoCard.text}</i>
+              </Typography>
+            </div>
+          </Grid>
+        ))}
+      </GridLayout>
+    );
+  }
+
+  return (
+    <GridLayout container={classes.container}>
+      {articles.map((article, i) => (
+        <Grid item key={i} xs={12} sm={6} lg={3} style={{ display: "flex" }}>
+          <NewsCard article={article} i={i} activeArticle={activeArticle} />
+        </Grid>
+      ))}
+    </GridLayout>
   );
 };
 
