@@ -1,3 +1,47 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  background-color: #f7f7f7;
+  display: flex;
+  /* flex-direction: column; */
+  align-content: center;
+  height: 70vh;
+  padding: 0 2%;
+}
+
+h1 {
+  font-family: "Roboto" !important;
+  font-weight: 700 !important;
+  color: #0d1940;
+}
+
+h5,
+h6,
+p {
+  color: #445077;
+}
+
+.hero-description {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-content: center;
+}
+
+.news {
+  /* background-color: blue; */
+  background: linear-gradient(rgba(85, 87, 241, 0.8), rgba(5, 1, 59, 0.8)),
+    url("https://images.unsplash.com/photo-1507676385008-e7fb562d11f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1507676385008-e7fb562d11f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"); */
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 2%;
+}
+
+.news-svg {
+  display: block;
 }

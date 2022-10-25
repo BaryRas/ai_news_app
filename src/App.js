@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
-// import "./App.css";
-import NewsCards from "./components/NewsCards/NewsCards";
+import "./App.css";
 import wordsToNumbers from "words-to-numbers";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Pages/Home";
+import News from "./components/News/News";
+
 function App() {
   const [newsState, setNewsState] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
@@ -34,11 +37,19 @@ function App() {
       },
     });
   }, [newsState]);
+  if (!newsState.length) {
+    return (
+      <div className="App">
+        <Navbar />
+        <Home />
+      </div>
+    );
+  }
 
   return (
     <div className="App">
-      <h1>AI NEWS APP</h1>
-      <NewsCards articles={newsState} activeArticle={activeArticle} />
+      <Navbar />
+      <News articles={newsState} activeArticle={activeArticle} />
     </div>
   );
 }
