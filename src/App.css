@@ -1,5 +1,4 @@
 .App {
-  /* text-align: center; */
   margin: 0;
   padding: 0;
 }
@@ -27,8 +26,6 @@ p {
 
 .hero-description {
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
   align-content: center;
 }
 
@@ -36,7 +33,6 @@ p {
   /* background-color: blue; */
   background: linear-gradient(rgba(85, 87, 241, 0.8), rgba(5, 1, 59, 0.8)),
     url("https://images.unsplash.com/photo-1507676385008-e7fb562d11f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
-  /* background-image: url("https://images.unsplash.com/photo-1507676385008-e7fb562d11f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"); */
   background-position: center;
   background-size: cover;
   padding-bottom: 2%;

@@ -24,10 +24,9 @@ const infoCards = [
   },
 ];
 
-const NewsCards = ({ articles, activeArticle }) => {
+const NewsCards = () => {
   const classes = useStyles();
 
-  // if (!articles.length) {
   return (
     <GridLayout>
       {infoCards.map((infoCard, i) => (
@@ -62,17 +61,6 @@ const NewsCards = ({ articles, activeArticle }) => {
       ))}
     </GridLayout>
   );
-  // }
-
-  // return (
-  //   <GridLayout container={classes.container}>
-  //     {articles.map((article, i) => (
-  //       <Grid item key={i} xs={12} sm={6} lg={3} style={{ display: "flex" }}>
-  //         <NewsCard article={article} i={i} activeArticle={activeArticle} />
-  //       </Grid>
-  //     ))}
-  //   </GridLayout>
-  // );
 };
 
 export default NewsCards;

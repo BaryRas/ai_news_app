@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
-import NewsCards from "../NewsCards/NewsCards";
+import NewsCards from "../../NewsCards/NewsCards";
 
 const Home = ({ newsState, activeArticle }) => {
   return (

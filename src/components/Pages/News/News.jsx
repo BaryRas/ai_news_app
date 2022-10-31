@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, Card, CardContent } from "@material-ui/core";
-import NewsCard from "../NewsCard/NewsCard.jsx";
-import GridLayout from "../Layout/GridLayout.jsx";
+import NewsCard from "../../NewsCard/NewsCard.jsx";
+import GridLayout from "../../Layout/GridLayout.jsx";
 import useStyles from "./styles.js";
 
 const News = ({ articles, activeArticle }) => {

@@ -3,8 +3,8 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 import "./App.css";
 import wordsToNumbers from "words-to-numbers";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Pages/Home";
-import News from "./components/News/News";
+import Home from "./components/Pages/Home/Home";
+import News from "./components/Pages/News/News";
 
 function App() {
   const [newsState, setNewsState] = useState([]);
@@ -37,19 +37,15 @@ function App() {
       },
     });
   }, [newsState]);
-  if (!newsState.length) {
-    return (
-      <div className="App">
-        <Navbar />
-        <Home />
-      </div>
-    );
-  }
 
   return (
     <div className="App">
-      <Navbar />
-      <News articles={newsState} activeArticle={activeArticle} />
+      <Navbar setNewsState={setNewsState} />
+      {!newsState.length ? (
+        <Home />
+      ) : (
+        <News articles={newsState} activeArticle={activeArticle} />
+      )}
     </div>
   );
 }
